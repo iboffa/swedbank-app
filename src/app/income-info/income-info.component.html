@@ -1,0 +1,20 @@
+<div class="p-fluid p-formgrid p-grid" [formGroup]="form">
+
+  <div class="p-field p-col-12 p-md-4 p-mt-3" *ngIf="employed">
+    <span class="p-float-label">
+      <input id="employment_sector" type="text" formControlName="Employment sector" pInputText>
+      <label for="employment_sector">Employment sector</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3" *ngIf="!employed">
+    <span class="p-float-label">
+      <p-dropdown id="income_source" [options]="incomeSources" formControlName="Main income source" [autoDisplayFirst]="false"></p-dropdown>
+      <label for="income_source">Main income source</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3" >
+    <span class="p-float-label">
+     <p-inputNumber id="income" mode="currency" currency="EUR" formControlName="Net annual income" [showButtons]="true" step="500" min="0"></p-inputNumber>
+      <label for="income">Net annual income</label>
+    </span>
+  </div>
