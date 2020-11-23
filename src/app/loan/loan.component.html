@@ -1,0 +1,14 @@
+<div class="p-fluid p-formgrid p-grid" [formGroup]="form">
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span>Amount: {{form.get('Loan amount').value}}€</span>
+    <div class="p-mt-3">
+      <p-slider [min]="500" [max]="20000" [step]="500" formControlName="Loan amount"></p-slider>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span> Term: {{form.get('Loan term').value}} months</span>
+    <div class="p-mt-3">
+      <p-slider [min]="6" [max]="60" [step]="1" formControlName="Loan term"></p-slider>
+    </div>
+  </div>
+</div>
