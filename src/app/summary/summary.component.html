@@ -1,0 +1,56 @@
+<div class="container">
+  <p-card header="Summary">
+
+
+    <h2>Personal Data</h2>
+    <div *ngFor="let item of summary['Personal Data'] | keyvalue">
+      <div class="p-grid p-fluid">
+        <span class="p-field p-col-12 p-md-2 bold">
+          {{item.key}}:
+        </span><span class="p-field p-col-12 p-md-10">
+          {{item.value}}
+        </span>
+      </div>
+    </div>
+
+    <h2>Employment Status</h2>
+    <div *ngFor="let item of summary['Employment Status'] | keyvalue">
+      <div class="p-grid p-fluid">
+        <span class="p-field p-col-12 p-md-2 bold">
+          {{item.key}}:
+        </span><span class="p-field p-col-12 p-md-10">
+          {{item.value}}
+        </span>
+      </div>
+    </div>
+
+    <h2>Income Info</h2>
+    <div *ngFor="let item of summary['Income Info'] | keyvalue">
+      <div class="p-grid p-fluid">
+        <span class="p-field p-col-12 p-md-2 bold">
+          {{item.key}}:
+        </span><span class="p-field p-col-12 p-md-10">
+          {{item.value}}
+        </span>
+      </div>
+    </div>
+
+    <h2>Loan Info</h2>
+    <div *ngFor="let item of summary['Loan Info'] | keyvalue">
+      <div class="p-grid p-fluid">
+        <span class="p-field p-col-12 p-md-2 bold">
+          {{item.key}}:
+        </span><span class="p-field p-col-12 p-md-10">
+          {{item.value}}
+        </span>
+      </div>
+    </div>
+    <p-footer>
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <button pButton icon="pi pi-angle-left" label="Back" (click)="back()"></button>
+        </div>
+      </p-toolbar>
+    </p-footer>
+  </p-card>
+</div>
