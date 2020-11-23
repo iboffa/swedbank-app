@@ -1,0 +1,33 @@
+<div class="p-fluid p-formgrid p-grid" [formGroup]="form">
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span class="p-float-label">
+      <input id="firstname" type="text" formControlName="First name" pInputText>
+      <label for="firstname">First Name</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span class="p-float-label">
+      <input id="lastname" type="text" formControlName="Last name" pInputText>
+      <label for="lastname">Last Name</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span class="p-float-label">
+      <p-calendar id="dob" formControlName="Date of birth" yearRange="1900:2020" [yearNavigator]="true"
+        [monthNavigator]="true" dateFormat="dd/mm/yy"></p-calendar>
+      <label for="dob">Date of Birth</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span class="p-float-label">
+      <input id="email" type="email" formControlName="E-Mail address" pInputText  pKeyFilter="email">
+      <label for="email">E-mail address</label>
+    </span>
+  </div>
+  <div class="p-field p-col-12 p-md-4 p-mt-3">
+    <span class="p-float-label">
+      <input id="phone" type="tel" formControlName="Phone number" pInputText [pKeyFilter]="phoneRegex">
+      <label for="phone">Phone number</label>
+    </span>
+  </div>
+</div>
