@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Loan Application Form</h2>
+  <p-steps [model]="items" [activeIndex]="step"></p-steps>
+  <p-card [header]="items[step].label" [ngSwitch]="step">
+    <app-personal-data *ngSwitchCase="0"></app-personal-data>
+    <app-employment-status *ngSwitchCase="1"></app-employment-status>
+    <app-income-info *ngSwitchCase="2"></app-income-info>
+    <app-loan *ngSwitchCase="3"></app-loan>
+    <p-footer>
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <button pButton icon="pi pi-angle-left" label="Back" *ngIf="step>0" (click)="previousStep()"></button>
+        </div>
+        <div class="p-toolbar-group-right">
+          <button pButton icon="pi pi-angle-right" label="Next" *ngIf="step<items.length-1"
+            (click)="nextStep()"></button>
+          <button pButton icon="pi pi-check" label="Summary" *ngIf="step===items.length-1"
+            (click)="showSummary()"></button>
+        </div>
+      </p-toolbar>
+    </p-footer>
+  </p-card>
+</div>
+<p-toast position="bottom-right"></p-toast>
